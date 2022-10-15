@@ -12,7 +12,11 @@ function App() {
     { id: 'todo1', title: 'Playing game', type: 'Hai' },
     { id: 'todo2', title: 'Doing homework', type: 'Hai' },
     { id: 'todo3', title: 'Eating honey', type: 'Thuy' }
-  ])
+  ]);
+
+  useEffect(() => {
+    console.log("here");
+  }, []);
 
   const handleInputChange = (e) => {
     setNameSubmit(e.target.value);
