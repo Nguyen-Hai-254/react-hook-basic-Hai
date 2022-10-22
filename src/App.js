@@ -3,6 +3,7 @@ import './App.css';
 import Nav from './views/Nav';
 import { useState, useEffect } from 'react';
 import Todo from './views/Todo';
+import Covid from './views/Covid';
 
 function App() {
 
@@ -14,9 +15,9 @@ function App() {
     { id: 'todo3', title: 'Eating honey', type: 'Thuy' }
   ]);
 
-  useEffect(() => {
-    console.log("here");
-  }, []);
+  // useEffect(() => {
+  //   console.log("here");
+  // }, []);
 
   const handleInputChange = (e) => {
     setNameSubmit(e.target.value);
@@ -75,6 +76,8 @@ function App() {
 
         <input type="text" value={nameSubmit} onChange={(e) => handleInputAddTodoChange(e)} />
         <button onClick={() => handleAddTodo()}>Click me</button>
+
+        <Covid />
       </header>
     </div>
   );
