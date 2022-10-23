@@ -4,6 +4,7 @@ import Nav from './views/Nav';
 import { useState, useEffect } from 'react';
 import Todo from './views/Todo';
 import Covid from './views/Covid';
+import CountDown from './views/CountDown';
 
 function App() {
 
@@ -60,6 +61,7 @@ function App() {
         <p>
           Waring!!! Hello {name}
         </p>
+        <CountDown />
         <input type="text" onChange={(e) => handleInputChange(e)} />
         <button onClick={() => handleEventClick()}>Click me</button>
         <Todo

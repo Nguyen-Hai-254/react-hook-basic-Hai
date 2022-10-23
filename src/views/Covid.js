@@ -1,32 +1,9 @@
-import { useEffect, useState } from "react";
-import axios from "axios";
+import useFetch from "../customize/fetch";
 
 const Covid = () => {
-    const [dataCovid, setDataCovid] = useState([]);
-    const [loading, setLoading] = useState(true);
-    const [isError, setIsError] = useState(false);
-
-    useEffect(() => {
-        const loadData = async () => {
-            try {
-                const res = await axios.get('https://api.covid19api.com/country/vietnam?from=2021-10-01T00%3A00%3A00Z&to=2021-10-20T00%3A00%3A00Z')
-                const data = res && res.data ? res.data : [];
-                setDataCovid(data);
-                setLoading(false);
-                setIsError(false);
-            }
-            catch (e) {
-                setIsError(true);
-                setLoading(false);
-                console.log('error: ', e.message);
-            }
-        }
-
-        setTimeout(() => {
-            loadData();
-        }, 2000);
-
-    }, [])
+    
+    const url = 'https://api.covid19api.com/country/vietnam?from=2021-10-01T00%3A00%3A00Z&to=2021-10-20T00%3A00%3A00Z';
+    const {data: dataCovid, loading, isError} = useFetch(url);
 
     return (
         <>
